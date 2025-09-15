@@ -4,7 +4,7 @@ background: './start_kit/bdxio-kit-communication/illustrations/bridge-background
 class: text-center
 ---
 
-# 
+# Le problème des applications legacy Windows
 
 <div class="flex justify-around">
   <div class="flex flex-col items-center" v-click>
