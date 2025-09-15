@@ -13,7 +13,9 @@ Beaucoup d'entreprises traînent encore des applications historiques Windows (II
 Et si on les faisait migrer... dans Kubernetes ? Grâce au support de Windows Containers et au scheduling multi-OS de Kubernetes, il est aujourd’hui possible d’orchestrer aussi bien des workloads Linux que Windows. Ce talk démystifie cette approche.
 
 ### Objectifs du talk
-Montrer concrètement comment containeriser une appli Windows legacy.
+Poser le contexte d'une histoire d'environnement cloud Azure avec des applications hybrides (monolithe .NET Framework Windows et des µService Dotnet core sous linux).
+Montrer comment cela engendre de la maintenance spécfique pour chacune des technos/OS (pipeline dédié, hébergement dans des VM ou des azure App Service, packaging spécifique sous forme de Zip).
+Ensuite, dans l'objectif de faire du FinOps, introduire la notion de WindowsContainer et montrer concrètement comment containeriser une appli Windows legacy.
 Déployer et orchestrer ce container dans un cluster AKS (Azure Kubernetes Service).
 Intégrer dans une chaîne CI/CD avec Helm, Docker registry, etc.
 Identifier les limites (licences, perf, limitations Windows ServerCore vs Nano, etc.).
