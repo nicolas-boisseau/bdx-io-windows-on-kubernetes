@@ -32,3 +32,7 @@ iconify json : https://github.com/NakayamaKento/AzureIcons
 
 git clone https://github.com/NakayamaKento/AzureIcons.git
 submodule ?
+
+https://mcr.microsoft.com/en-us/artifact/mar/dotnet/framework/aspnet/tags
+
+https://learn.microsoft.com/fr-fr/virtualization/windowscontainers/quick-start/set-up-environment?tabs=dockerce
