@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
 title: Oui, Kubernetes peut faire tourner vos applis Windows. Sérieusement.
 info: |
   ## BDX.IO 2025
@@ -15,15 +15,15 @@ highlighter: shiki
 lineNumbers: true
 colorSchema: 'dark'
 
-src: ./pages/1.md
+src: ./pages/1_intro.md
 ---
 
 ---
-src: ./pages/2.md
+src: ./pages/2_context.md
 ---
 
 ---
-src: ./pages/3.md
+src: ./pages/3_intro_windowscontainers.md
 ---
 
 ---

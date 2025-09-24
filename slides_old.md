@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
 title: Oui, Kubernetes peut faire tourner vos applis Windows. Sérieusement.
 info: |
   ## BDX.IO 2025
@@ -19,12 +19,12 @@ colorSchema: 'dark'
 # Oui, Kubernetes peut faire tourner vos applis Windows. Sérieusement.
 
 <div class="flex justify-center">
-  <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-40 mx-auto my-5" />
+  <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-40 mx-auto my-5" />
 </div>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-    <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
+    <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
   </a>
   <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
@@ -41,7 +41,7 @@ layout: two-cols
 
 # Aujourd'hui
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/post-it-black.png" class="w-20 absolute right-5 top-10 rotate-12" />
+<img src="/resources/bdxio-kit-communication/illustrations/post-it-black.png" class="w-20 absolute right-5 top-10 rotate-12" />
 
 <v-clicks>
 
@@ -59,7 +59,7 @@ layout: two-cols
 ::right::
 
 <div class="flex flex-col h-full justify-center pl-10">
-  <img src="/start_kit/bdxio-kit-communication/illustrations/retro-computer-black.png" class="w-80" />
+  <img src="/resources/bdxio-kit-communication/illustrations/retro-computer-black.png" class="w-80" />
 </div>
 
 <!--
@@ -68,7 +68,7 @@ Notes du présentateur: Agenda de la présentation
 
 ---
 layout: center
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
 class: text-center
 ---
 
@@ -90,7 +90,7 @@ class: text-center
 </div>
 
 <div class="mt-10 w-2/3 mx-auto" v-click>
-  <img src="/start_kit/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-5 absolute left-30 -rotate-12" />
+  <img src="/resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-5 absolute left-30 -rotate-12" />
   <blockquote class="text-left">
     Beaucoup d'entreprises traînent encore des applications historiques Windows (IIS, .NET Framework 4.x, COM+, etc.)
   </blockquote>
@@ -127,7 +127,7 @@ class: text-center
 
 </v-clicks>
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-10 absolute right-10 bottom-20" />
+<img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-10 absolute right-10 bottom-20" />
 
 ---
 layout: two-cols
@@ -147,7 +147,7 @@ layout: two-cols
 
 </v-clicks>
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/circle-orange.png" class="w-20 absolute left-10 bottom-10" />
+<img src="/resources/bdxio-kit-communication/illustrations/circle-orange.png" class="w-20 absolute left-10 bottom-10" />
 
 ::right::
 
@@ -178,7 +178,7 @@ layout: two-cols
 
 ---
 layout: image-right
-image: './start_kit/bdxio-kit-communication/illustrations/bridge-black.png'
+image: './resources/bdxio-kit-communication/illustrations/bridge-black.png'
 ---
 
 # Kubernetes multi-OS
@@ -212,11 +212,11 @@ image: './start_kit/bdxio-kit-communication/illustrations/bridge-black.png'
   </v-click>
 </div>
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/line-purple.png" class="h-1 w-40 absolute bottom-10 left-5" />
+<img src="/resources/bdxio-kit-communication/illustrations/line-purple.png" class="h-1 w-40 absolute bottom-10 left-5" />
 
 ---
 layout: center
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
 ---
 
 # Démonstration
@@ -246,7 +246,7 @@ background: './start_kit/bdxio-kit-communication/illustrations/bridge-background
   </div>
 </div>
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/arrow-purple.png" class="h-10 absolute left-10 bottom-20 -rotate-90" />
+<img src="/resources/bdxio-kit-communication/illustrations/arrow-purple.png" class="h-10 absolute left-10 bottom-20 -rotate-90" />
 
 ---
 
@@ -279,7 +279,7 @@ RUN powershell -Command \
 EXPOSE 80
 ```
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/highlight-orange.png" class="h-5 absolute right-10 top-40" />
+<img src="/resources/bdxio-kit-communication/illustrations/highlight-orange.png" class="h-5 absolute right-10 top-40" />
 
 ---
 layout: two-cols
@@ -429,7 +429,7 @@ layout: two-cols
       ```
     </div>
     <div class="flex-1">
-      <img src="/start_kit/bdxio-kit-communication/illustrations/sheet-black.png" class="w-40 mt-5 ml-10" />
+      <img src="/resources/bdxio-kit-communication/illustrations/sheet-black.png" class="w-40 mt-5 ml-10" />
     </div>
   </div>
 </div>
@@ -440,7 +440,7 @@ layout: two-cols
 
 # Bénéfices
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/right-bottom-angle-purple.png" class="w-20 absolute right-5 top-10" />
+<img src="/resources/bdxio-kit-communication/illustrations/right-bottom-angle-purple.png" class="w-20 absolute right-5 top-10" />
 
 <v-clicks>
 
@@ -454,7 +454,7 @@ layout: two-cols
 </v-clicks>
 
 <div v-click class="mt-5">
-  <img src="/start_kit/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
+  <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
   <blockquote class="text-sm italic">
     "Grâce à cette approche, nous avons réduit nos coûts d'infrastructure de 30% tout en améliorant la résilience de nos applications Windows legacy."
   </blockquote>
@@ -477,13 +477,13 @@ layout: two-cols
 </v-clicks>
 
 <div v-click>
-  <img src="/start_kit/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-8 absolute right-20 bottom-20" />
+  <img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-8 absolute right-20 bottom-20" />
 </div>
 
 ---
 layout: center
 class: text-center
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
 ---
 
 # Conclusion
@@ -513,7 +513,7 @@ background: './start_kit/bdxio-kit-communication/illustrations/bridge-background
 </div>
 
 <div class="mt-10" v-click>
-  <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-10 inline-block" />
+  <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-10 inline-block" />
   <p class="text-lg mt-2">Merci pour votre attention!</p>
 </div>
 
@@ -529,13 +529,13 @@ class: text-center
 </div>
 
 <div class="mt-10">
-  <img src="/start_kit/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right-10 bottom-10" />
-  <img src="/start_kit/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left-10 top-10" />
+  <img src="/resources/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right-10 bottom-10" />
+  <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left-10 top-10" />
 </div>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-    <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
+    <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
   </a>
   <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />

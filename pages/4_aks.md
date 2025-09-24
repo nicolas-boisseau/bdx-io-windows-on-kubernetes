@@ -29,7 +29,7 @@ style micro fill:#bbf,stroke:#333,stroke-width:2px
 
 </v-clicks>
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-10 absolute right-10 bottom-20" />
+<img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-10 absolute right-10 bottom-20" />
 
 <!--
 Notes du présentateur: Montrer les silos et la duplication des efforts dans un environnement hybride.

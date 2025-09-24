@@ -1,6 +1,6 @@
 ---
 layout: center
-background: './start_kit/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
+background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-small.png'
 class: text-center
 ---
 
@@ -22,7 +22,7 @@ class: text-center
 </div>
 
 <div class="mt-10 w-2/3 mx-auto" v-click>
-  <img src="/start_kit/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-5 absolute left-30 -rotate-12" />
+  <img src="/resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-5 absolute left-30 -rotate-12" />
   <blockquote class="text-left">
     Beaucoup d'entreprises traînent encore des applications historiques Windows (IIS, .NET Framework 4.x, COM+, etc.)
   </blockquote>

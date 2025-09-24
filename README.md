@@ -36,3 +36,10 @@ submodule ?
 https://mcr.microsoft.com/en-us/artifact/mar/dotnet/framework/aspnet/tags
 
 https://learn.microsoft.com/fr-fr/virtualization/windowscontainers/quick-start/set-up-environment?tabs=dockerce
+
+sur Windows 11 Pro (non dispo sur W11 Famille)
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
+```
+
+https://docs.mermaidchart.com/icons/intro

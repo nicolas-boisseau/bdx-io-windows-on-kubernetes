@@ -4,7 +4,7 @@ layout: two-cols
 
 # Aujourd'hui
 
-<img src="/start_kit/bdxio-kit-communication/illustrations/post-it-black.png" class="w-20 absolute right-5 top-10 rotate-12" />
+<img src="/resources/bdxio-kit-communication/illustrations/post-it-black.png" class="w-20 absolute right-5 top-10 rotate-12" />
 
 <v-clicks>
 
@@ -22,7 +22,7 @@ layout: two-cols
 ::right::
 
 <div class="flex flex-col h-full justify-center pl-10">
-  <img src="/start_kit/bdxio-kit-communication/illustrations/retro-computer-black.png" class="w-80" />
+  <img src="/resources/bdxio-kit-communication/illustrations/retro-computer-black.png" class="w-80" />
 </div>
 
 <!--

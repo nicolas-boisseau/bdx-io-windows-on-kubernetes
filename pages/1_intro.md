@@ -7,12 +7,12 @@
 </div>
 
 <div class="flex justify-center">
-  <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
+  <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
 </div>
 
 <div class="abs-br m-6 flex gap-2">
   <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-    <img src="/start_kit/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
+    <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
   </a>
   <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
