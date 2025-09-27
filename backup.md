@@ -514,86 +514,89 @@ Notes du présentateur: Expliquer comment Kubernetes gère différentes platefor
 -->
 
 ---
+layout: full
+---
+
+test
+
+---
 
 # Intégration CI/CD avec Helm
 
-<div class="grid grid-cols-2 gap-3">
-
-<div v-click class="mr-5">
-
-### Manifestes Kubernetes
-
-```yaml {all|15-16}{at:2}
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: legacy-windows-app
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: legacy-windows-app
-  template:
-    metadata:
-      labels:
-        app: legacy-windows-app
-    spec:
-      nodeSelector:
-        kubernetes.io/os: windows
-      containers:
-      - name: legacy-app
-        image: myregistry.azurecr.io/legacy-app:1.0
-        ports:
-        - containerPort: 80
-```
-
+<div class="grid grid-cols-2 gap-5">
+  <div>
+    <v-click>
+      <h3 class="mb-3">Manifestes Kubernetes</h3>
+      ```yaml
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: legacy-windows-app
+      spec:
+        replicas: 2
+        selector:
+          matchLabels:
+            app: legacy-windows-app
+        template:
+          metadata:
+            labels:
+              app: legacy-windows-app
+          spec:
+            nodeSelector:
+              kubernetes.io/os: windows
+            containers:
+            - name: legacy-app
+              image: myregistry.azurecr.io/legacy-app:1.0
+              ports:
+              - containerPort: 80
+      ```
+    </v-click>
+  </div>
+  
+  <div>
+    <v-click>
+      <h3 class="mb-3">Pipeline CI/CD</h3>
+      ```yaml
+      # Azure DevOps / GitHub Actions
+      steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build Windows container
+        run: |
+          docker build -t myregistry.azurecr.io/legacy-app:${{ github.sha }} .
+          docker push myregistry.azurecr.io/legacy-app:${{ github.sha }}
+      
+      - name: Deploy to AKS with Helm
+        run: |
+          helm upgrade --install legacy-app ./charts/legacy-app \
+            --set image.tag=${{ github.sha }} \
+            --namespace production
+      ```
+</v-click>
+  </div>
 </div>
 
-<div>
-<div v-click="3" class="mr-5">
-
-### Pipeline CI/CD
-
-```yaml
-# Azure DevOps / GitHub Actions
-steps:
-- uses: actions/checkout@v3
-
-- name: Build Windows container
-  run: |
-    docker build -t myregistry.azurecr.io/legacy-app:${{ github.sha }} .
-    docker push myregistry.azurecr.io/legacy-app:${{ github.sha }}
-
-- name: Deploy to AKS with Helm
-  run: |
-    helm upgrade --install legacy-app ./charts/legacy-app \
-      --set image.tag=${{ github.sha }} \
-      --namespace production
-```
-
+<div v-click class="mt-5">
+  <h3 class="mb-3">Chart Helm</h3>
+  <div class="flex">
+    <div class="flex-1">
+      ```yaml
+      # values.yaml
+      replicaCount: 2
+      image:
+        repository: myregistry.azurecr.io/legacy-app
+        tag: latest
+      resources:
+        limits:
+          cpu: 1
+          memory: 2Gi
+      ```
+    </div>
+    <div class="flex-1">
+      <img src="/resources/bdxio-kit-communication/illustrations/sheet-black.png" class="w-40 mt-5 ml-10" />
+    </div>
+  </div>
 </div>
-
-<div v-click="4" class="mr-5">
-
-### Chart Helm 
-
-```yaml
-# values.yaml
-replicaCount: 2
-image:
-  repository: myregistry.azurecr.io/legacy-app
-  tag: latest
-resources:
-  limits:
-    cpu: 1
-    memory: 2Gi
-```
-</div>
-</div>
-</div>
-
-<img src="/resources/bdxio-kit-communication/illustrations/sheet-black.png" class="absolute right-5 bottom-5" />
-
 
 <!--
 Notes du présentateur: Intégration dans une chaîne CI/CD avec des outils modernes, spécificités de Windows.

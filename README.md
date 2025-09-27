@@ -43,3 +43,5 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 ```
 
 https://docs.mermaidchart.com/icons/intro
+
+https://learn.microsoft.com/en-us/azure/aks/windows-vs-linux-containers
