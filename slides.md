@@ -110,7 +110,7 @@ architecture-beta
 
   <ul class="text-4 mt-1 ml-4">
     <li>Utiliser des VM Windows Server </li>
-    <li>Avantages : iso on-premise, pas de changement d'architecture</li>
+    <li>Avantages : iso on-premise, pas de changement de type d'hébergement</li>
     <li>Inconvénients : coût, maintenance, Cloud non natif</li>
    </ul>
   </div>
