@@ -1,6 +1,7 @@
 ---
-theme: seriph
+layout: cover
 background: './resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
+theme: seriph
 title: Oui, Kubernetes peut faire tourner vos applis Windows. Sérieusement.
 info: |
   ## BDX.IO 2025
@@ -28,18 +29,30 @@ colorSchema: 'dark'
   <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-    <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
-  </a>
-  <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
 
 <!--
 Notes du présentateur: Introduction personnelle et remerciement à BDX.IO
 -->
+
+---
+layout: header
+---
+
+# Présentation
+
+<div class="flex gap-5 mt-30 mb-10">
+  
+  <div class="text-left mt-5 mr-7">
+    <h2 class="text-3xl font-bold">Nicolas Boisseau</h2>
+    <p class="text-lg">Senior Tech Lead @ Peaksys</p>
+    <p class="text-sm italic">#Azure #Kubernetes #DevOps #FinOps</p>
+  </div>
+  <img src="/resources/nbo.jpeg" class="h-40 rounded-full border-4 border-white/20" />
+</div>
+
+<div class="absolute top-55 right-15">
+<img src="/resources/peaksys_it_cdiscount_white.png" class="h-28" />
+</div>
 
 ---
 layout: two-cols-header
@@ -75,8 +88,6 @@ layout: two-cols-header
 
 </div>
 
-<img src="/resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-10 absolute left-10 bottom-20" />
-
 ---
 
 # Qu'est-ce qu'on fait pour le legacy Windows ?
@@ -87,25 +98,6 @@ layout: two-cols-header
 
  <div class="col-span-2" v-click="1">
 
-   #### Azure App Services Windows (managed PaaS)
-    
-   <ul class="text-4 mt-1 ml-4">
-      <li>Support natif des applications Windows (IIS-like)</li>
-      <li>Besoin de packaging spécifique (.zip)</li>
-      <li>Ecosystème spécifique (slots, plans, etc.), logs, etc.</li>
-   </ul>
-
-  </div>
-
-  <div class="w-30 absolute right-20" v-click="1">
-```mermaid
-architecture-beta
-    service appService(azure:app-services)[App Services]
-```
-  </div>
-
-  <div class="col-span-2" v-click="2">
-
    #### Serveurs virtuels (VM, IaaS)
 
   <ul class="text-4 mt-1 ml-4">
@@ -113,16 +105,41 @@ architecture-beta
     <li>Avantages : iso on-premise, pas de changement de type d'hébergement</li>
     <li>Inconvénients : coût, maintenance, Cloud non natif</li>
    </ul>
+
   </div>
-  <div class="w-30 absolute right-20 bottom-30" v-click="2">
+
+  <div class="w-30 absolute right-20" v-click="1">
+
 ```mermaid
 architecture-beta
     service appService(azure:virtual-machine)[VM Windows Server]
+
 ```
+  </div>
+
+  <div class="col-span-2 mt-5" v-click="2">
+
+  #### Azure App Services Windows (managed PaaS)
+    
+   <ul class="text-4 mt-1 ml-4">
+      <li>Support natif des applications Windows (IIS-like)</li>
+      <li>Besoin de packaging spécifique (.zip)</li>
+      <li>Ecosystème spécifique (slots, plans, etc.), logs, etc.</li>
+   </ul>
+   
+  </div>
+  <div class="w-30 absolute right-20 bottom-30" v-click="2">
+  
+```mermaid
+architecture-beta
+    service appService(azure:app-services)[App Services]
+
+```
+
   </div>
 </div>
 
-<img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-10 absolute right-10 bottom-10" />
+
 
 ---
 
@@ -170,22 +187,21 @@ architecture-beta
 </div>
 
   <div class="">
-    <div class="mb-15 mt-5">
+    <div class="text-4 mb-15 mt-5">
       <ul v-click="1">
-          <li>Backend legacy Windows-only (.NET Framework, IIS)</li>
+          <li class="mb-2">Backend legacy Windows-only<br/>(.NET Framework, IIS)</li>
           <li>Exposition via Application Gateway dédié car non supporté par AGIC</li>
         </ul>
     </div>
-    <div>
+    <div class="text-4">
       <ul v-click="2">
-        <li>Backend moderne (.NET Core, Node.js, etc.) sur AKS</li>
+        <li class="mb-2">Backend moderne<br/>(.NET Core, Node.js, etc.) sur AKS</li>
         <li>Exposition Application Gateway Ingress Controller (AGIC)</li>
       </ul>
     </div>
   </div>
 </div>
 
-<img src="/resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="h-10 absolute left-10 bottom-20" />
 
 <!--
 Notes du présentateur: Agenda de la présentation
@@ -229,8 +245,8 @@ image: /resources/double_hosting_legacy_and_modern.png
 
   <tr >
     <td class="text-lg text-center" colspan="2">
-      Maintenance globale 
-      <span v-mark="{ at: 1, color: 'red', type: 'circle' }">
+      <span v-mark="{ at:1, color: 'red', type: 'highlight' }">
+        Maintenance globale       
         <strong class="text-xl">x2</strong>
       </span>
       <br/>
@@ -267,14 +283,126 @@ image: /resources/double_hosting_legacy_and_modern.png
 
 # Pendant ce temps...
 
+<v-switch>
+  <template #1>
+
 <div>
 ```mermaid
-timeline
-    2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
-    2019-03 : Kubernetes v1.14 - GA des nœuds Windows
-    2020-05 : AKS - GA du support Windows Server nodes
+---
+config:
+  logLevel: 'debug'
+  themeVariables:
+    cScale0: '#19D3A6'
+    cScaleLabel0: '#000000'
+    cScale1: '#FFD917'
+    cScaleLabel1: '#000000'
+    cScale2: '#7D7DF8'
+    cScaleLabel2: '#ffffff'
+---
+    timeline
+        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
 ```
 </div>
+
+  </template>
+  <template #2>
+
+<div>
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  themeVariables:
+    cScale0: '#19D3A6'
+    cScaleLabel0: '#000000'
+    cScale1: '#FFD917'
+    cScaleLabel1: '#000000'
+    cScale2: '#7D7DF8'
+    cScaleLabel2: '#ffffff'
+---
+    timeline
+        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
+        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
+```
+</div>
+
+  </template>
+  <template #3>
+
+<div>
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  themeVariables:
+    cScale0: '#19D3A6'
+    cScaleLabel0: '#000000'
+    cScale1: '#FFD917'
+    cScaleLabel1: '#000000'
+    cScale2: '#7D7DF8'
+    cScaleLabel2: '#ffffff'
+---
+    timeline
+        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
+        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
+        Mai 2020 : AKS - GA du support Windows Server nodes
+
+```
+</div>
+
+  </template>
+  <template #4>
+
+<div>
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  themeVariables:
+    cScale0: '#19D3A6'
+    cScaleLabel0: '#000000'
+    cScale1: '#FFD917'
+    cScaleLabel1: '#000000'
+    cScale2: '#7D7DF8'
+    cScaleLabel2: '#ffffff'
+---
+    timeline
+        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
+        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
+        Mai 2020 : AKS - GA du support Windows Server nodes : En parallèle, 1ère version de notre environnement Sandbox
+
+```
+</div>
+
+  </template>
+    <template #5>
+
+<div>
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  themeVariables:
+    cScale0: '#19D3A6'
+    cScaleLabel0: '#000000'
+    cScale1: '#FFD917'
+    cScaleLabel1: '#000000'
+    cScale2: '#7D7DF8'
+    cScaleLabel2: '#ffffff'
+    cScale3: '#FFD917'
+    cScaleLabel3: '#000000'
+---
+    timeline
+        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
+        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
+        Mai 2020 : AKS - GA du support Windows Server nodes : En parallèle, 1ère version de notre environnement Sandbox
+        2021-2022 : Revue FinOps & Optimisations des coûts Azure
+```
+</div>
+
+  </template>
+</v-switch>
+
 
 ---
 layout: image-left
@@ -340,16 +468,11 @@ layout: two-cols
 <v-clicks>
 
 - Isoler des applications Windows dans des conteneurs
-- Deux types:
-  - Windows Server Core (complet)
-  - Windows Nano Server (minimal)
 - Mêmes principes que les conteneurs Linux
 - Partage le noyau Windows de l'hôte
 - Support inclus dans Docker Desktop
 
 </v-clicks>
-
-<img src="/resources/bdxio-kit-communication/illustrations/circle-orange.png" class="w-20 absolute left-10 bottom-10" />
 
 ::right::
 
@@ -362,7 +485,7 @@ layout: two-cols
     </div>
 
 ````md magic-move
-```dockerfile {all|1-2|4-6|8} {at:5}
+```dockerfile {all|1-2|4-6|8}{at:6}
 # Exemple de Dockerfile Windows
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
 
@@ -372,7 +495,7 @@ COPY ./website/ .
 
 EXPOSE 80
 ```
-```dockerfile {all|1|3-5|7-8|10|12-13|all} {at:5}
+```dockerfile {all|1|3-5|7-8|10|12-13|all}{at:6}
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8.1 AS builder
 
 WORKDIR C:/Temp
@@ -394,7 +517,8 @@ EXPOSE 80
   </div>
 
 <!--
-Notes du présentateur: Introduction aux concepts des Windows Containers et différences avec Linux.
+Références : 
+https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images
 -->
 
 ---
@@ -641,10 +765,6 @@ layout: two-cols
 
 </v-clicks>
 
-<div v-click>
-  <img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="h-8 absolute right-20 bottom-20" />
-</div>
-
 <!--
 Notes du présentateur: Résumé des avantages et limitations de l'approche, retours d'expérience.
 -->
@@ -704,15 +824,6 @@ class: text-center
 <div class="mt-10">
   <img src="/resources/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right-10 bottom-10" />
   <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left-10 top-10" />
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-    <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
-  </a>
-  <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
 </div>
 
 <!--
