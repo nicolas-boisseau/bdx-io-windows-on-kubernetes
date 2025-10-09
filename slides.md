@@ -35,7 +35,7 @@ Notes du présentateur: Introduction personnelle et remerciement à BDX.IO
 -->
 
 ---
-layout: header
+layout: full
 ---
 
 # Présentation
