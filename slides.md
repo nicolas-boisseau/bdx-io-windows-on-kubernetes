@@ -212,7 +212,7 @@ layout: image-left
 image: /resources/double_hosting_legacy_and_modern.png
 ---
 
-# Ca va pas ?
+# Ca ne va pas ?
 
 <table>
 <thead>
@@ -257,7 +257,8 @@ image: /resources/double_hosting_legacy_and_modern.png
   
 </table>
 
-<!-- <div>
+<!--
+<div>
 #### Pour le legacy
 
 - Packages .zip
@@ -277,7 +278,8 @@ image: /resources/double_hosting_legacy_and_modern.png
   - Logs via stdout/stderr
   - Monitoring via Azure Monitor et Log Analytics
 
-</div> -->
+</div>
+-->
 
 ---
 
@@ -729,8 +731,6 @@ layout: two-cols
 
 # Bénéfices
 
-<img src="/resources/bdxio-kit-communication/illustrations/right-bottom-angle-purple.png" class="w-20 absolute right-5 top-10" />
-
 <v-clicks>
 
 - Uniformisation de l'infrastructure
@@ -742,7 +742,7 @@ layout: two-cols
 
 </v-clicks>
 
-<div v-click class="mt-5">
+<div v-click class="mt-20">
   <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
   <blockquote class="text-sm italic">
     "Grâce à cette approche, nous avons réduit nos coûts d'infrastructure de 30% tout en améliorant la résilience de nos applications Windows legacy."
@@ -758,12 +758,16 @@ layout: two-cols
 - Taille des images (10GB+)
 - Compatibilité des versions Windows
 - Performance de démarrage
-- Certains composants COM+ complexes
 - Besoin de licences Windows
 - Limitations du networking
 - Gestion des mises à jour Windows
 
 </v-clicks>
+
+<!--
+https://learn.microsoft.com/en-us/azure/aks/windows-best-practices
+https://learn.microsoft.com/en-us/azure/aks/upgrade-windows-os
+-->
 
 <!--
 Notes du présentateur: Résumé des avantages et limitations de l'approche, retours d'expérience.
@@ -784,7 +788,7 @@ background: './resources/bdxio-kit-communication/illustrations/bridge-background
 <div class="grid grid-cols-3 gap-5" v-click>
   <div class="bg-white/10 backdrop-blur-sm p-5 rounded-lg">
     <carbon-container-software class="text-4xl mb-3" />
-    <h3>Containerisation</h3>
+    <h3>Conteneurisation</h3>
     <p class="text-sm">Empaquetez vos apps Windows dans des conteneurs</p>
   </div>
   
