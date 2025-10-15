@@ -378,7 +378,7 @@ image: /resources/aks_windows.png
     <h4 class="text-sm font-bold mb-2">Gains ?</h4>
     <ul class="text-sm">
         <li>Baisse des coûts d'infra (mutualisation)</li>
-        <li>Moins de maintenance (du moins, sur papier!)</li>
+        <li>Moins de maintenance</li>
     </ul>
 </div>
 
@@ -474,31 +474,21 @@ https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-contai
 -->
 
 ---
-layout: two-cols
----
 
-# Déploiement sur AKS
+# Configuration AKS avec support Windows
 
-<v-clicks>
-
-- Configuration du cluster AKS
-- Options de réseau (Azure CNI obligatoire)
-- Storage classes Windows compatibles
-- Gestion des licences Windows
-
-</v-clicks>
-
-<div class="mt-5">
+<div class="w-100 float-left">
   <v-click>
 
-```bash
-# Création d'un cluster AKS avec node pool Windows
+```bash{1-8|1-8|10-16|all}{at:2}
+# Création d'un cluster AKS (Linux nodes)
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --node-count 1 \
     --enable-addons monitoring \
-    --generate-ssh-keys
+    --generate-ssh-keys \
+    --network-plugin azure
 
 # Ajouter un node pool Windows
 az aks nodepool add \
@@ -512,28 +502,30 @@ az aks nodepool add \
   </v-click>
 </div>
 
-::right::
+<div class="w-100 float-right relative">
 
-<div class="pl-10 pt-10">
-  <v-click>
+  <img src="/resources/aks_cluster_title.png" class="h-15 absolute left-20" v-click="1" />
 
-<img src="/resources/hybride_aks_cluster.png" class="h-60" />
+  <FancyArrow from="(150, 70)" to="(110, 130)" color="white" width="4" roughness="2" v-click="2"  />
+  <img src="/resources/aks_tux_nodes.png" class="h-40 absolute top-35" v-click="2" />
+  
+  <FancyArrow from="(250, 70)" to="(300, 130)" color="white" width="4" roughness="2" v-click="3"  />
+  <img src="/resources/aks_win_nodes.png" class="h-40 absolute top-35 left-60" v-click="3" />
+  
+</div>
 
-  </v-click>
-
-  <div class="mt-10">
+<div class="absolute bottom-3 left-60 w-1/2" v-click="4">
     <v-click>
       <div class="bg-blue-50 dark:bg-blue-900 p-3 rounded-lg">
-        <h4 class="text-sm font-bold mb-2">Points d'attention</h4>
-        <ul class="text-sm">
+        <h5 class="font-bold mb-2">Points d'attention</h5>
+        <ul class="text-xs">
           <li>Version Windows Server de l'image = version du node</li>
-          <li>Limitations des fonctionnalités réseau</li>
-          <li>Taille des images (10GB+ parfois)</li>
+          <li>Limitations des fonctionnalités réseau (Azure CNI obligatoire)</li>
+          <li>Gestion des mises à jour Windows</li>
         </ul>
       </div>
     </v-click>
   </div>
-</div>
 
 <!--
 doc: https://learn.microsoft.com/en-us/azure/aks/learn/quick-windows-container-deploy-cli?tabs=add-windows-node-pool
@@ -543,31 +535,34 @@ Limitations réseaux :
 En AKS hybride, faites simple : Ingress sur Linux, workloads .NET Framework sur Windows, Azure CNI obligatoire pour Windows, pas de Cilium côté Windows aujourd’hui.
 
 Les NetworkPolicies fonctionnent pour Windows via Azure NPM/Calico, mais gardez en tête des lacunes de correspondance/capacités par rapport à Linux.
+
 -->
 
 ---
-background: './resources/bdxio-kit-communication/illustrations/bridge-black.png'
 layout: two-cols
 ---
 
 # Kubernetes multi-OS
 
+<div class="mt-20">
+  
 <v-clicks>
 
 - Kubernetes 1.14+ supporte les nœuds Windows
 - Scheduling basé sur nodeSelector ou nodeAffinity
 - Pod assignation basée sur les contraintes OS
-- Networking multi-OS (CNI)
+- Networking multi-OS (avec Azure CNI)
 - Un control plane Linux obligatoire
 
 </v-clicks>
 
+</div>
+
 ::right::
 
-<div class="mt-5">
-  <v-click>
+  <div class="w-120 mt-30">
 
-```yaml {all|6-7}
+```yaml {none|none|6-7}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -582,7 +577,14 @@ spec:
     - containerPort: 80
 ```
 
-  </v-click>
+  </div>
+
+<div class="absolute bottom-12 left-60 w-1/2" v-click="7">
+  
+  <blockquote class="text-sm italic">
+    <span class="underline font-bold">En résumé</span> :<br/>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>"Un cluster Kubernetes peut gérer des nœuds Linux et Windows dans le même cluster, mais les pods sont assignés à des nœuds spécifiques en fonction de leur système d'exploitation."
+  </blockquote>
 </div>
 
 <!--
@@ -593,83 +595,45 @@ Notes du présentateur: Expliquer comment Kubernetes gère différentes platefor
 
 # Intégration CI/CD avec Helm
 
-<div class="grid grid-cols-2 gap-3">
+### Déploiement avec Helm dans des pipelines modernes
 
-<div v-click class="mr-5">
+<div class="mt-5 mb-5">
 
-### Manifestes Kubernetes
+```bash {none|1|3|4-7|all}
+docker build -t myregistry.azurecr.io/legacy-app:${{ image_version }} .
 
-```yaml {all|15-16}{at:2}
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: legacy-windows-app
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: legacy-windows-app
-  template:
-    metadata:
-      labels:
-        app: legacy-windows-app
-    spec:
-      nodeSelector:
-        kubernetes.io/os: windows
-      containers:
-      - name: legacy-app
-        image: myregistry.azurecr.io/legacy-app:1.0
-        ports:
-        - containerPort: 80
+docker push myregistry.azurecr.io/legacy-app:${{ image_version }}
+
+helm upgrade --install legacy-app ./charts/legacy-app \
+      --set image.tag=myregistry.azurecr.io/legacy-app:${{ image_version }} \
+      --namespace my-namespace
 ```
 
 </div>
 
-<div>
-<div v-click="3" class="mr-5">
+<div v-click>
 
-### Pipeline CI/CD
+  ### Un workflow identique pour toutes les applications
 
-```yaml
-# Azure DevOps / GitHub Actions
-steps:
-- uses: actions/checkout@v3
+  <img src="/resources/bdxio-kit-communication/illustrations/arrow-purple.png" class="h-25 absolute left-12 bottom-25" />
 
-- name: Build Windows container
-  run: |
-    docker build -t myregistry.azurecr.io/legacy-app:${{ github.sha }} .
-    docker push myregistry.azurecr.io/legacy-app:${{ github.sha }}
+  <div class="mt-5 ml-30">
+  
+```mermaid 
+graph LR
+    A@{ icon: "mdi:git", label: "Code Source", h: 80}
+    B@{ icon: "mdi:docker", label: "Build Docker Image", h: 80}
+    C@{ icon: "mdi:docker", label: "Push to Registry", h: 80}
+    D@{ icon: "mdi:helm", label: "Deploy with Helm", h: 80}
+    E@{ icon: "azure:kubernetes-services", label: "Cluster AKS Linux + Windows nodes", h: 80}
 
-- name: Deploy to AKS with Helm
-  run: |
-    helm upgrade --install legacy-app ./charts/legacy-app \
-      --set image.tag=${{ github.sha }} \
-      --namespace production
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
-
+  </div>
 </div>
-
-<div v-click="4" class="mr-5">
-
-### Chart Helm 
-
-```yaml
-# values.yaml
-replicaCount: 2
-image:
-  repository: myregistry.azurecr.io/legacy-app
-  tag: latest
-resources:
-  limits:
-    cpu: 1
-    memory: 2Gi
-```
-</div>
-</div>
-</div>
-
-<img src="/resources/bdxio-kit-communication/illustrations/sheet-black.png" class="absolute right-5 bottom-5" />
-
 
 <!--
 Notes du présentateur: Intégration dans une chaîne CI/CD avec des outils modernes, spécificités de Windows.
