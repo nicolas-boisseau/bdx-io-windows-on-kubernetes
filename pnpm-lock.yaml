@@ -29,6 +29,9 @@ importers:
       playwright-chromium:
         specifier: ^1.55.1
         version: 1.55.1
+      slidev-addon-fancy-arrow:
+        specifier: ^0.13.11
+        version: 0.13.11(typescript@5.9.2)
       vue:
         specifier: ^3.5.18
         version: 3.5.21(typescript@5.9.2)
@@ -2303,6 +2306,9 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  slidev-addon-fancy-arrow@0.13.11:
+    resolution: {integrity: sha512-Ioqv+ojrsQ0Gw7Qnwv2RusldpCpvEQ5LMR1QRlHirXQqda9HSVMETRJqKUAFtgVF5VENumlwonwMJhftJc/pqQ==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5509,6 +5515,13 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
+
+  slidev-addon-fancy-arrow@0.13.11(typescript@5.9.2):
+    dependencies:
+      roughjs: 4.6.6
+      vue: 3.5.21(typescript@5.9.2)
+    transitivePeerDependencies:
+      - typescript
 
   source-map-js@1.2.1: {}
 

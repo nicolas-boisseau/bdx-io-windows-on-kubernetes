@@ -15,6 +15,7 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "playwright-chromium": "^1.55.1",
+    "slidev-addon-fancy-arrow": "^0.13.11",
     "vue": "^3.5.18"
   }
 }
