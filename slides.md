@@ -28,7 +28,7 @@ addons:
 </div>
 
 <div class="flex justify-center">
-  <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
+  <img src="./resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
 </div>
 
 <!--
@@ -48,11 +48,11 @@ layout: full
     <p class="text-lg">Staff Engineer @ Peaksys</p>
     <p class="text-sm italic">#Azure #Kubernetes #DevOps #FinOps #Archi</p>
   </div>
-  <img src="/resources/nbo_ghibli.png" class="h-40 rounded-full border-4 border-white/20" />
+  <img src="./resources/nbo_linkedin.jpg" class="h-40 rounded-full border-4 border-white/20" />
 </div>
 
 <div class="absolute top-55 right-15">
-<img src="/resources/peaksys_it_cdiscount_white.png" class="h-28" />
+<img src="./resources/peaksys_it_cdiscount_white.png" class="h-28" />
 </div>
 
 <!--
@@ -195,7 +195,7 @@ transition: slide-up
 
 ::left::
 <div class="m-5 mt--20">
-  <img src="/resources/ecosystem_win.png" class="h-50 mr-5 float-left" />
+  <img src="./resources/ecosystem_win.png" class="h-50 mr-5 float-left" />
 
   <ul class="text-4">
     <li class="mb-5">Backend Windows-only<br/>(.NET Framework, IIS)</li>
@@ -206,7 +206,7 @@ transition: slide-up
 ::right:: 
 
 <div class="m-5 mt--20">
-  <img src="/resources/ecosystem_tux.png" class="h-50 mr-5 float-left" />
+  <img src="./resources/ecosystem_tux.png" class="h-50 mr-5 float-left" />
 
  <ul class="text-4">
         <li class="mb-5">Backend moderne<br/>(.NET Core, Node.js, etc.)</li>
@@ -226,6 +226,11 @@ transition: slide-up
   <div class="col-span-2">
 
 <!--
+
+1ère version de Docker (linux) en mars 2013
+
+Docker for Windows en preview en 2015 - introduit dans Windows server 2016
+
 Animations sur du mermaid : workaround avec un v-switch
 https://github.com/slidevjs/slidev/issues/1498
 -->
@@ -264,13 +269,13 @@ architecture-beta
    <img v-motion
   :initial="{ x: 1000 }"
   :enter="{ x: 0, y: -80 }"
-  :duration="300" src="/resources/ecosystem_win.png" class="h-50 mx-auto" />
+  :duration="300" src="./resources/ecosystem_win.png" class="h-50 mx-auto" />
   <FancyArrow from="(720, 150)" to="(550, 220)" color="white" width="4" roughness="2"  v-click="1" />
 
 <img v-motion
   :initial="{ x: 1000 }"
   :click-2="{ x: 0, y: -80 }"
-  :duration="300" src="/resources/ecosystem_tux.png" class="h-50 mx-auto" />
+  :duration="300" src="./resources/ecosystem_tux.png" class="h-50 mx-auto" />
   <FancyArrow from="(690, 350)" to="(550, 380)" color="white" width="4" roughness="2" v-click="3"  />
   
 
@@ -284,7 +289,7 @@ Notes du présentateur: Agenda de la présentation
 
 ---
 layout: image-left
-image: /resources/double_hosting_legacy_and_modern.png
+image: ./resources/double_hosting_legacy_and_modern.png
 ---
 
 # Ca ne va pas ?
@@ -293,11 +298,11 @@ image: /resources/double_hosting_legacy_and_modern.png
 <thead>
   <tr>
     <td>
-      <img src="/resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="w-10 float-left" />
+      <img src="./resources/bdxio-kit-communication/illustrations/scribble-yellow.png" class="w-10 float-left" />
       <span class="text-sm text-yellow-500 pl-2">Legacy</span>
     </td>
     <td>
-      <img src="/resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="w-10 float-left" />
+      <img src="./resources/bdxio-kit-communication/illustrations/scribble-turquoise.png" class="w-10 float-left" />
       <span class="text-sm text-turquoise-500 pl-2">Moderne</span>
     </td>
   </tr>
@@ -359,7 +364,7 @@ image: /resources/double_hosting_legacy_and_modern.png
 ---
 layout: image-left
 # the image source
-image: /resources/aks_windows.png
+image: ./resources/aks_windows.png
 ---
 
 # Idée FinOps : et si on pouvait tout mettre dans Kubernetes ?
@@ -389,7 +394,7 @@ Notes du présentateur: Expliquer pourquoi les applications legacy Windows sont 
 
 ---
 layout: image-right
-image: /resources/aks_workshop_with_microsoft.png
+image: ./resources/aks_workshop_with_microsoft.png
 ---
 
 # Mise en oeuvre du projet pilote
@@ -428,7 +433,7 @@ layout: two-cols
 
 ::right::
 
-  <img v-click="[5,6]"  src="/resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-110 bottom-40" />
+  <img v-click="[5,6]"  src="./resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-110 bottom-40" />
 
   <div v-click="6" class="flex flex-col items-center">
     <div class="flex gap-5 mb-5">
@@ -504,13 +509,13 @@ az aks nodepool add \
 
 <div class="w-100 float-right relative">
 
-  <img src="/resources/aks_cluster_title.png" class="h-15 absolute left-20" v-click="1" />
+  <img src="./resources/aks_cluster_title.png" class="h-15 absolute left-20" v-click="1" />
 
   <FancyArrow from="(150, 70)" to="(110, 130)" color="white" width="4" roughness="2" v-click="2"  />
-  <img src="/resources/aks_tux_nodes.png" class="h-40 absolute top-35" v-click="2" />
+  <img src="./resources/aks_tux_nodes.png" class="h-40 absolute top-35" v-click="2" />
   
   <FancyArrow from="(250, 70)" to="(300, 130)" color="white" width="4" roughness="2" v-click="3"  />
-  <img src="/resources/aks_win_nodes.png" class="h-40 absolute top-35 left-60" v-click="3" />
+  <img src="./resources/aks_win_nodes.png" class="h-40 absolute top-35 left-60" v-click="3" />
   
 </div>
 
@@ -615,7 +620,7 @@ helm upgrade --install legacy-app ./charts/legacy-app \
 
   ### Un workflow identique pour toutes les applications
 
-  <img src="/resources/bdxio-kit-communication/illustrations/arrow-purple.png" class="h-25 absolute left-12 bottom-25" />
+  <img src="./resources/bdxio-kit-communication/illustrations/arrow-purple.png" class="h-25 absolute left-12 bottom-25" />
 
   <div class="mt-5 ml-30">
   
@@ -645,8 +650,6 @@ layout: two-cols
 
 # Bénéfices
 
-<v-clicks>
-
 - Uniformisation de l'infrastructure
 - Optimisation des coûts (FinOps)
 - Intégration aux pratiques DevOps modernes
@@ -654,12 +657,10 @@ layout: two-cols
 - Scalabilité et haute disponibilité
 - Transition progressive vers le cloud natif
 
-</v-clicks>
-
 <div v-click class="mt-20">
-  <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
+  <img src="./resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
   <blockquote class="text-sm italic">
-    "Grâce à cette approche, nous avons réduit nos coûts d'infrastructure de 30% tout en améliorant la résilience de nos applications Windows legacy."
+    "Grâce à cette approche, nous avons réduit nos coûts d'infrastructure tout en améliorant la résilience de nos applications Windows legacy."
   </blockquote>
 </div>
 
@@ -667,16 +668,12 @@ layout: two-cols
 
 # Limitations
 
-<v-clicks>
-
 - Taille des images (10GB+)
 - Compatibilité des versions Windows
 - Performance de démarrage
 - Besoin de licences Windows
 - Limitations du networking
 - Gestion des mises à jour Windows
-
-</v-clicks>
 
 <!--
 https://learn.microsoft.com/en-us/azure/aks/windows-best-practices
@@ -720,7 +717,7 @@ background: './resources/bdxio-kit-communication/illustrations/bridge-background
 </div>
 
 <div class="mt-10" v-click>
-  <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-10 inline-block" />
+  <img src="./resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-10 inline-block" />
   <p class="text-lg mt-2">Merci pour votre attention!</p>
 </div>
 
@@ -729,20 +726,25 @@ Notes du présentateur: Conclusion et message principal à retenir.
 -->
 
 ---
-layout: center
-class: text-center
+layout: two-cols
 ---
 
-# Questions & Réponses
+<div class="mt-30 p-5 relative text-center">
 
-<div class="flex justify-center items-center">
-  <carbon-help class="text-6xl" />
+  # Questions & Réponses
+
+  <div class="flex justify-center items-center">
+    <carbon-help class="text-6xl" />
+  </div>
+
+  <img src="./resources/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right--10 bottom--5" />
+  <img src="./resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left--10 top--5" />
+
 </div>
 
-<div class="mt-10">
-  <img src="/resources/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right-10 bottom-10" />
-  <img src="/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left-10 top-10" />
-</div>
+::right::
+
+<img src="./resources/openfeedback_white.png" class="mt-15 h-80 mx-auto" />
 
 <!--
 Notes du présentateur: Préparer quelques réponses aux questions fréquentes.
