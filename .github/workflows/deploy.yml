@@ -31,13 +31,13 @@ jobs:
       - name: Debug - show AzureIcons in submodule
         run: |
           echo "Listing submodule AzureIcons:"
-          ls -la path/to/your/submodule/AzureIcons || true
-          find path/to/your/submodule/AzureIcons -maxdepth 2 -type f -print || true
+          ls -la AzureIcons || true
+          find AzureIcons -maxdepth 2 -type f -print || true
 
       - name: Copy AzureIcons into public
         run: |
           mkdir -p public/AzureIcons
-          cp -R path/to/your/submodule/AzureIcons/* public/AzureIcons/ || true
+          cp -R AzureIcons/* public/AzureIcons/ || true
           echo "After copy, public/AzureIcons:"
           ls -la public/AzureIcons || true
 
