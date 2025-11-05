@@ -624,24 +624,36 @@ Notes du présentateur: Conclusion et message principal à retenir.
 
 ---
 layout: two-cols
+title: Questions & Réponses
 ---
 
-<div class="mt-30 p-5 relative text-center">
-
-  # Questions & Réponses
+<div class="mt-15 p-5 relative text-center">
 
   <div class="flex justify-center items-center">
     <carbon-help class="text-6xl" />
   </div>
 
+  # Questions & Réponses
+
   <img src="./public/resources/bdxio-kit-communication/illustrations/right-bottom-angle-black.png" class="w-20 absolute right--10 bottom--5" />
   <img src="./public/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left--10 top--5" />
+
+  <div class="mt-20 text-sm italic text-center">
+    <img src="./public/resources/slide_link_qr_code.png" class=" w-25 inline" />
+    <br/>
+    <div class="mt-5 text-7">Retrouver les slides ici</div>
+      </div>
 
 </div>
 
 ::right::
 
 <img src="./public/resources/openfeedback_white.png" class="mt-15 h-80 mx-auto" />
+
+<div class="ml-10">
+  <h3 class="text-lg font-bold mt-5">Donnez votre avis !</h3>
+  <p class="text-sm">Scannez le QR code pour accéder au formulaire OpenFeedback et partager vos impressions.</p>
+</div>
 
 <!--
 Notes du présentateur: Préparer quelques réponses aux questions fréquentes.
