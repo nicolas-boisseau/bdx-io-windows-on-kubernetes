@@ -23,6 +23,24 @@ jobs:
         with:
           submodules: true
 
+      - name: Ensure submodules initialized (safe)
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+
+      - name: Debug - show AzureIcons in submodule
+        run: |
+          echo "Listing submodule AzureIcons:"
+          ls -la path/to/your/submodule/AzureIcons || true
+          find path/to/your/submodule/AzureIcons -maxdepth 2 -type f -print || true
+
+      - name: Copy AzureIcons into public
+        run: |
+          mkdir -p public/AzureIcons
+          cp -R path/to/your/submodule/AzureIcons/* public/AzureIcons/ || true
+          echo "After copy, public/AzureIcons:"
+          ls -la public/AzureIcons || true
+
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
