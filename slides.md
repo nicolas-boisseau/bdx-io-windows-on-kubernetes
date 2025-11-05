@@ -1,6 +1,6 @@
 ---
 layout: cover
-background: './public/resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
+background: 'resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
 theme: seriph
 title: Oui, Kubernetes peut faire tourner vos applis Windows. Sérieusement.
 info: |
@@ -291,7 +291,7 @@ Notes du présentateur: Agenda de la présentation
 
 ---
 layout: image-left
-image: ./public/resources/double_hosting_legacy_and_modern.png
+image: resources/double_hosting_legacy_and_modern.png
 ---
 
 # Ca ne va pas ?
@@ -366,7 +366,7 @@ image: ./public/resources/double_hosting_legacy_and_modern.png
 ---
 layout: image-left
 # the image source
-image: ./public/resources/aks_windows.png
+image: public/resources/aks_windows.png
 ---
 
 # Idée FinOps : et si on pouvait tout mettre dans Kubernetes ?
@@ -392,7 +392,7 @@ Notes du présentateur: Expliquer pourquoi les applications legacy Windows sont 
 
 ---
 layout: image-right
-image: ./public/resources/aks_workshop_with_microsoft.png
+image: public/resources/aks_workshop_with_microsoft.png
 ---
 
 # Mise en oeuvre du projet pilote
