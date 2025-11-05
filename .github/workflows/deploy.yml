@@ -32,8 +32,8 @@ jobs:
         run: nci
 
       # git clone AzureIcons repository to have the icons available during the build
-      - name: Clone AzureIcons repository
-        run: git clone https://github.com/NakayamaKento/AzureIcons  
+      # - name: Clone AzureIcons repository
+      #   run: git clone https://github.com/NakayamaKento/AzureIcons  
 
       - name: Build
         run: nr build --base /${{github.event.repository.name}}/
