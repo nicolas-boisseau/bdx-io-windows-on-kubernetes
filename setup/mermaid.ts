@@ -14,7 +14,7 @@ mermaid.registerIconPacks([
   { name: logos.prefix, icons: logos },      // "logos"
   { name: carbon.prefix, icons: carbon },      // "carbon"
   { name: mdi.prefix, icons: mdi },      // "mdi"
-  { name: "azure", loader: () => fetch("/AzureIcons/icons.json").then(r => r.json()) } // prefix: azure
+  { name: "azure", loader: () => fetch(`${import.meta.env.BASE_URL ?? '/'}AzureIcons/icons.json`).then(r => r.json()) } // prefix: azure
 ])
 
 export default defineMermaidSetup(() => {
