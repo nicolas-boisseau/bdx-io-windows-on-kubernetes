@@ -63,100 +63,6 @@ Role chez Peaksys
 
 # L'avènement des Windows Containers
 
-<v-switch>
-  <template #1>
-
-<div>
-```mermaid
----
-config:
-  logLevel: 'debug'
-  themeVariables:
-    cScale0: '#19D3A6'
-    cScaleLabel0: '#000000'
-    cScale1: '#FFD917'
-    cScaleLabel1: '#000000'
-    cScale2: '#7D7DF8'
-    cScaleLabel2: '#ffffff'
----
-    timeline
-        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
-```
-</div>
-
-  </template>
-  <template #2>
-
-<div>
-```mermaid
----
-config:
-  logLevel: 'debug'
-  themeVariables:
-    cScale0: '#19D3A6'
-    cScaleLabel0: '#000000'
-    cScale1: '#FFD917'
-    cScaleLabel1: '#000000'
-    cScale2: '#7D7DF8'
-    cScaleLabel2: '#ffffff'
----
-    timeline
-        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
-        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
-```
-</div>
-
-  </template>
-  <template #3>
-
-<div>
-```mermaid
----
-config:
-  logLevel: 'debug'
-  themeVariables:
-    cScale0: '#19D3A6'
-    cScaleLabel0: '#000000'
-    cScale1: '#FFD917'
-    cScaleLabel1: '#000000'
-    cScale2: '#7D7DF8'
-    cScaleLabel2: '#ffffff'
----
-    timeline
-        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
-        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
-        Mai 2020 : AKS - GA du support Windows Server nodes
-
-```
-</div>
-
-  </template>
-  <template #4>
-
-<div>
-```mermaid
----
-config:
-  logLevel: 'debug'
-  themeVariables:
-    cScale0: '#19D3A6'
-    cScaleLabel0: '#000000'
-    cScale1: '#FFD917'
-    cScaleLabel1: '#000000'
-    cScale2: '#7D7DF8'
-    cScaleLabel2: '#ffffff'
----
-    timeline
-        2015 : Introduction Windows Server Containers (Docker + Windows Server 2016 TP)
-        Mars 2019 : Kubernetes v1.14 - GA des nœuds Windows
-        Mai 2020 : AKS - GA du support Windows Server nodes : En parallèle, 1ère version de notre environnement Sandbox
-
-```
-</div>
-
-  </template>
-    <template #5>
-
 <div>
 ```mermaid
 ---
@@ -178,10 +84,8 @@ config:
         Mai 2020 : AKS - GA du support Windows Server nodes : En parallèle, 1ère version de notre environnement Sandbox
         2021-2022 : Revue FinOps & Optimisations des coûts Azure
 ```
-</div>
 
-  </template>
-</v-switch>
+</div>
 
 <!--
 Notes du présentateur: 
@@ -294,7 +198,7 @@ layout: image-left
 image: resources/double_hosting_legacy_and_modern.png
 ---
 
-# Ca ne va pas ?
+# Ça ne va pas ?
 
 <table>
 <thead>
@@ -377,7 +281,7 @@ image: resources/aks_windows.png
 - Pipeline CD unifié (déploiement avec Helm)
 - 1 seule plateforme pour toutes nos applications
 
-<div class="mt-5 bg-green-30 dark:bg-green-500 p-3 rounded-lg w-70" v-click>
+<div class="mt-5 bg-green-30 dark:bg-green-500 p-3 rounded-lg w-70">
     <h4 class="text-sm font-bold mb-2">Gains ?</h4>
     <ul class="text-sm">
         <li>Baisse des coûts (mutualisation)</li>
@@ -388,7 +292,6 @@ image: resources/aks_windows.png
 <!--
 Notes du présentateur: Expliquer pourquoi les applications legacy Windows sont problématiques dans un environnement cloud moderne.
 -->
-
 
 ---
 layout: image-right
@@ -431,16 +334,16 @@ layout: two-cols
 
 ::right::
 
-  <img v-click  src="./public/resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-60 bottom-2" />
+  <img src="./public/resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-70 bottom-2" />
 
-  <div v-click="2" class="flex flex-col items-center">
+  <div v-click="1" class="flex flex-col items-center">
     <div class="flex gap-5 mb-5">
       <carbon-container-registry class="text-5xl" />
       <!-- <carbon-logo-microsoft class="text-5xl" /> -->
     </div>
 
 ````md magic-move
-```dockerfile {all|1-2|4-6|8}{at:2}
+```dockerfile {all|1-2|4-6|8}{at:1}
 # Exemple de Dockerfile Windows
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
 
@@ -450,7 +353,7 @@ COPY ./website/ .
 
 EXPOSE 80
 ```
-```dockerfile {all|1|3-5|7-8|10|12-13|all}{at:2}
+```dockerfile {all|1|3-5|7-8|10|12-13|all}{at:1}
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8.1 AS builder
 
 WORKDIR C:/Temp
@@ -580,7 +483,7 @@ spec:
 
   <FancyArrow from="(920, 200)" to="(750, 265)" color="white" width="4" roughness="2"  v-click="1" />
 
-<div class="absolute bottom-12 left-60 w-1/2" v-click="2">
+<div class="absolute bottom-12 left-60 w-1/2" v-click="1">
   
   <blockquote class="text-sm italic">
     <span class="underline font-bold">En résumé</span> :<br/>
@@ -612,7 +515,7 @@ helm upgrade --install legacy-app ./charts/legacy-app \
 
 </div>
 
-<div v-click>
+<div v-click="4">
 
   ### Un workflow identique pour toutes les applications
 
@@ -648,12 +551,12 @@ layout: two-cols
 
 - Uniformisation de l'infrastructure
 - Optimisation des coûts (FinOps)
-- Intégration aux pratiques DevOps modernes
+- Intégration aux <span v-mark="{ at:1, color: 'green', type: 'underline' }">pratiques DevOps modernes</span>
 - Observabilité améliorée
 - Scalabilité et haute disponibilité
 - Transition progressive vers le cloud natif
 
-<div v-click class="mt-20">
+<div class="mt-20">
   <img src="./public/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-10 absolute left-5 bottom-40" />
   <blockquote class="text-sm italic">
     "Grâce à cette approche, nous avons réduit nos coûts d'infrastructure tout en améliorant la résilience de nos applications Windows legacy."
@@ -664,13 +567,12 @@ layout: two-cols
 
 # Limitations
 
-- Taille des images (10GB+)
+- <span v-mark="{ at:2, color: 'red', type: 'underline' }">Taille des images</span> (10GB+)
 - Compatibilité des versions Windows
 - Performance de démarrage
 - Besoin de licences Windows
 - Limitations du networking
 - Gestion des mises à jour Windows
-
 
 <!--
 Notes du présentateur: Résumé des avantages et limitations de l'approche, retours d'expérience.
