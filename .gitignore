@@ -5,7 +5,6 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
-AzureIcons/
 .idea/
 my-build-folder/
 slides-export.pdf

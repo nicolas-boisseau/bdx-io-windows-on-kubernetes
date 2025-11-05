@@ -46,7 +46,7 @@ layout: full
   <div class="text-left mt-5 mr-2">
     <h2 class="text-3xl font-bold">Nicolas Boisseau</h2>
     <p class="text-lg">Staff Engineer @ Peaksys</p>
-    <p class="text-sm italic">#Azure #Kubernetes #DevOps #FinOps #Archi</p>
+    <p class="text-sm italic">#Archi #DevOps #Azure #FinOps #Kubernetes</p>
   </div>
   <img src="./resources/nbo_linkedin.jpg" class="h-40 rounded-full border-4 border-white/20" />
 </div>
@@ -183,6 +183,12 @@ config:
   </template>
 </v-switch>
 
+<!--
+Notes du présentateur: 
+1ère version de Docker (linux) en mars 2013
+
+Docker for Windows en preview en 2015 - introduit dans Windows server 2016
+-->
 
 ---
 layout: two-cols-header
@@ -215,6 +221,7 @@ transition: slide-up
       </ul>
 </div>
 
+
 ---
 
 # Environnement Cloud Azure
@@ -226,11 +233,6 @@ transition: slide-up
   <div class="col-span-2">
 
 <!--
-
-1ère version de Docker (linux) en mars 2013
-
-Docker for Windows en preview en 2015 - introduit dans Windows server 2016
-
 Animations sur du mermaid : workaround avec un v-switch
 https://github.com/slidevjs/slidev/issues/1498
 -->
@@ -369,20 +371,16 @@ image: ./resources/aks_windows.png
 
 # Idée FinOps : et si on pouvait tout mettre dans Kubernetes ?
 
-<v-clicks>
-
 - 1 seul Application gateway, avec Ingress Controller (AGIC)
 - packaging unique (images Docker)
 - tous rangés dans un registre unique 
 - Pipeline CD unifié (déploiement avec Helm)
 - 1 seule plateforme pour toutes nos applications
 
-</v-clicks>
-
-<div class="mt-5 bg-green-30 dark:bg-green-500 p-3 rounded-lg" v-click>
+<div class="mt-5 bg-green-30 dark:bg-green-500 p-3 rounded-lg w-70" v-click>
     <h4 class="text-sm font-bold mb-2">Gains ?</h4>
     <ul class="text-sm">
-        <li>Baisse des coûts d'infra (mutualisation)</li>
+        <li>Baisse des coûts (mutualisation)</li>
         <li>Moins de maintenance</li>
     </ul>
 </div>
@@ -399,22 +397,26 @@ image: ./resources/aks_workshop_with_microsoft.png
 
 # Mise en oeuvre du projet pilote
 
-Accompagné par Microsoft nous avons :
+<div class="mt-5">
 
-<v-clicks>
+  Accompagné par Microsoft nous avons :
 
-- testé la conteneurisation d'une application legacy Windows en local
+  <!-- <v-clicks> -->
 
-- créé un cluster AKS avec support Windows
+  - testé la conteneurisation d'une app en local
 
-- déployé notre application legacy Windows dans AKS
+  - créé un cluster AKS avec support Windows
 
-- exposé l'application via Application Gateway avec AGIC
+  - déployé notre application legacy dans AKS
 
-- testé la montée en charge des applications
+  - exposé l'application via Application Gateway
 
-- puis mis à l'échelle !
-</v-clicks>
+  - testé la montée en charge des applications
+
+  - puis mis à l'échelle !
+
+  <!-- </v-clicks> -->
+</div>
 
 ---
 layout: two-cols
@@ -422,27 +424,23 @@ layout: two-cols
 
 # Qu'est-ce qu'un Windows Container?
 
-<v-clicks>
-
 - Isoler des applications Windows dans des conteneurs
 - Mêmes principes que les conteneurs Linux
 - Partage le noyau Windows de l'hôte
 - Support inclus dans Docker Desktop
 
-</v-clicks>
-
 ::right::
 
-  <img v-click="[5,6]"  src="./resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-110 bottom-40" />
+  <img v-click  src="./resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-60 bottom-2" />
 
-  <div v-click="6" class="flex flex-col items-center">
+  <div v-click="2" class="flex flex-col items-center">
     <div class="flex gap-5 mb-5">
       <carbon-container-registry class="text-5xl" />
       <!-- <carbon-logo-microsoft class="text-5xl" /> -->
     </div>
 
 ````md magic-move
-```dockerfile {all|1-2|4-6|8}{at:6}
+```dockerfile {all|1-2|4-6|8}{at:2}
 # Exemple de Dockerfile Windows
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
 
@@ -452,7 +450,7 @@ COPY ./website/ .
 
 EXPOSE 80
 ```
-```dockerfile {all|1|3-5|7-8|10|12-13|all}{at:6}
+```dockerfile {all|1|3-5|7-8|10|12-13|all}{at:2}
 FROM mcr.microsoft.com/dotnet/framework/sdk:4.8.1 AS builder
 
 WORKDIR C:/Temp
@@ -519,7 +517,7 @@ az aks nodepool add \
   
 </div>
 
-<div class="absolute bottom-3 left-60 w-1/2" v-click="4">
+<!-- <div class="absolute bottom-3 left-60 w-1/2" v-click="4">
     <v-click>
       <div class="bg-blue-50 dark:bg-blue-900 p-3 rounded-lg">
         <h5 class="font-bold mb-2">Points d'attention</h5>
@@ -530,7 +528,7 @@ az aks nodepool add \
         </ul>
       </div>
     </v-click>
-  </div>
+  </div> -->
 
 <!--
 doc: https://learn.microsoft.com/en-us/azure/aks/learn/quick-windows-container-deploy-cli?tabs=add-windows-node-pool
@@ -551,15 +549,11 @@ layout: two-cols
 
 <div class="mt-20">
   
-<v-clicks>
-
 - Kubernetes 1.14+ supporte les nœuds Windows
 - Scheduling basé sur nodeSelector ou nodeAffinity
 - Pod assignation basée sur les contraintes OS
 - Networking multi-OS (avec Azure CNI)
 - Un control plane Linux obligatoire
-
-</v-clicks>
 
 </div>
 
@@ -567,7 +561,7 @@ layout: two-cols
 
   <div class="w-120 mt-30">
 
-```yaml {none|none|6-7}
+```yaml {all|6-7}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -584,7 +578,9 @@ spec:
 
   </div>
 
-<div class="absolute bottom-12 left-60 w-1/2" v-click="7">
+  <FancyArrow from="(920, 200)" to="(750, 265)" color="white" width="4" roughness="2"  v-click="1" />
+
+<div class="absolute bottom-12 left-60 w-1/2" v-click="2">
   
   <blockquote class="text-sm italic">
     <span class="underline font-bold">En résumé</span> :<br/>
@@ -605,12 +601,12 @@ Notes du présentateur: Expliquer comment Kubernetes gère différentes platefor
 <div class="mt-5 mb-5">
 
 ```bash {none|1|3|4-7|all}
-docker build -t myregistry.azurecr.io/legacy-app:${{ image_version }} .
+docker build -t myregistry.azurecr.io/legacy-app:$VERSION .
 
-docker push myregistry.azurecr.io/legacy-app:${{ image_version }}
+docker push myregistry.azurecr.io/legacy-app:$VERSION
 
 helm upgrade --install legacy-app ./charts/legacy-app \
-      --set image.tag=myregistry.azurecr.io/legacy-app:${{ image_version }} \
+      --set image.tag=myregistry.azurecr.io/legacy-app:$VERSION \
       --namespace my-namespace
 ```
 
@@ -675,13 +671,12 @@ layout: two-cols
 - Limitations du networking
 - Gestion des mises à jour Windows
 
-<!--
-https://learn.microsoft.com/en-us/azure/aks/windows-best-practices
-https://learn.microsoft.com/en-us/azure/aks/upgrade-windows-os
--->
 
 <!--
 Notes du présentateur: Résumé des avantages et limitations de l'approche, retours d'expérience.
+
+https://learn.microsoft.com/en-us/azure/aks/windows-best-practices
+https://learn.microsoft.com/en-us/azure/aks/upgrade-windows-os
 -->
 
 ---
