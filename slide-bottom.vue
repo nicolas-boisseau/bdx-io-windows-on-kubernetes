@@ -7,7 +7,7 @@
     <a href="https://fr.linkedin.com/company/peaksys" target="_blank" alt="Peaksys recrute" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
         <img src="/resources/peaksys_logo.png" class="h-8">
     </a>
-    <a href="https://github.com/nicolas-boisseau" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <a href="https://github.com/nicolas-boisseau/bdx-io-windows-on-kubernetes" target="_blank" alt="GitHub Profile" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
         <carbon-logo-github />
     </a>   
     <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
