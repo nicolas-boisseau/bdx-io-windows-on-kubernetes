@@ -342,7 +342,7 @@ layout: two-cols
 
 ::right::
 
-  <img src="./public/resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-70 bottom-2" />
+  <img src="./public/resources/docker_desktop_windowscontainers.png" class="h-60 absolute left-60 bottom-2" />
 
   <div v-click="1" class="flex flex-col items-center">
     <div class="flex gap-5 mb-5">
