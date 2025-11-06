@@ -125,6 +125,14 @@ transition: slide-up
       </ul>
 </div>
 
+<!--
+Notes du présentateur: 
+
+produit SaaS de paiement qui a évolué au fil du temps
+
+comme tout produit qui a vécu, on traine du legacy mais on a aussi des parties modernes (cloud native)
+
+-->
 
 ---
 
@@ -545,6 +553,7 @@ Notes du présentateur: Intégration dans une chaîne CI/CD avec des outils mode
 
 ---
 layout: two-cols
+title: Bénéfices & Limitations
 ---
 
 # Bénéfices
@@ -572,10 +581,13 @@ layout: two-cols
 - Performance de démarrage
 - Besoin de licences Windows
 - Limitations du networking
-- Gestion des mises à jour Windows
+- Mises à jour Windows... mais gérées via des images
+- Gestion des logs... mais <span v-mark="{ at:3, color: 'green', type: 'underline' }">LogMonitor</span>  aide !
 
 <!--
 Notes du présentateur: Résumé des avantages et limitations de l'approche, retours d'expérience.
+
+Immutable infrastructure : les mises à jour de sécurité et correctifs Windows sont gérés via des nouvelles images de base.
 
 https://learn.microsoft.com/en-us/azure/aks/windows-best-practices
 https://learn.microsoft.com/en-us/azure/aks/upgrade-windows-os
@@ -658,3 +670,17 @@ title: Questions & Réponses
 <!--
 Notes du présentateur: Préparer quelques réponses aux questions fréquentes.
 -->
+
+---
+
+# Annexes
+
+Documentation autour des Windows Containers :
+- [Setup Windowscontainers](https://learn.microsoft.com/fr-fr/virtualization/windowscontainers/quick-start/set-up-environment?tabs=dockerce)
+- [Windows Containers overview](https://learn.microsoft.com/en-us/virtualization/windowscontainers/)
+- [Windows vs Linux containers](https://learn.microsoft.com/en-us/azure/aks/windows-vs-linux-containers)
+- [Windows containers images](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images)
+- [.NET Framework docker images](https://mcr.microsoft.com/en-us/artifact/mar/dotnet/framework/aspnet/tags)
+
+Ressources additionnelles autour des Windows Containers :
+- [LogMonitor pour le forward des logs sur stdout/err](https://github.com/microsoft/windows-container-tools/blob/main/LogMonitor/README.md)
