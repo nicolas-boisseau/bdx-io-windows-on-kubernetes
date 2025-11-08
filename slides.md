@@ -653,7 +653,7 @@ title: Questions & Réponses
   <div class="mt-12 text-sm italic text-center">
     <img src="./public/resources/slide_link_qr_code.png" class=" w-25 inline" />
     <br/>
-    <div class="mt-5 text-7">Retrouver les slides ici</div>
+    <div class="mt-5 text-7">Retrouvez les slides ici</div>
       </div>
 
 </div>
