@@ -651,7 +651,7 @@ title: Questions & Réponses
   <img src="./public/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left--10 top--5" />
 
   <div class="mt-12 text-sm italic text-center">
-    <img src="./public/resources/slide_link_qr_code.png" class=" w-25 inline" />
+    <img src="./public/resources/slide_link_qr_code2.png" class=" w-25 inline" />
     <br/>
     <div class="mt-5 text-7">Retrouvez les slides ici</div>
       </div>
