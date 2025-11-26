@@ -681,6 +681,7 @@ Documentation autour des Windows Containers :
 - [Windows vs Linux containers](https://learn.microsoft.com/en-us/azure/aks/windows-vs-linux-containers)
 - [Windows containers images](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images)
 - [.NET Framework docker images](https://mcr.microsoft.com/en-us/artifact/mar/dotnet/framework/aspnet/tags)
+- [Windows in Kubernetes](https://kubernetes.io/docs/concepts/windows/)
 
 Ressources additionnelles autour des Windows Containers :
 - [LogMonitor pour le forward des logs sur stdout/err](https://github.com/microsoft/windows-container-tools/blob/main/LogMonitor/README.md)
