@@ -403,13 +403,14 @@ az aks create \
     --enable-addons monitoring \
     --generate-ssh-keys \
     --network-plugin azure
+    --node-pool-name tux
 
 # Ajouter un node pool Windows
 az aks nodepool add \
     --resource-group myResourceGroup \
     --cluster-name myAKSCluster \
     --os-type Windows \
-    --name winpool \
+    --name win \
     --node-count 1
 ```
 
