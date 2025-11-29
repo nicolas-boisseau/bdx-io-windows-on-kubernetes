@@ -652,7 +652,7 @@ title: Questions & Réponses
   <img src="./public/resources/bdxio-kit-communication/illustrations/left-top-angle-black.png" class="w-20 absolute left--10 top--5" />
 
   <div class="mt-12 text-sm italic text-center">
-    <img src="./public/resources/slide_link_qr_code.png" class=" w-25 inline" />
+    <img src="./public/resources/slide_link_qr_code2.png" class=" w-25 inline" />
     <br/>
     <div class="mt-5 text-7">Retrouvez les slides ici</div>
       </div>
@@ -682,6 +682,7 @@ Documentation autour des Windows Containers :
 - [Windows vs Linux containers](https://learn.microsoft.com/en-us/azure/aks/windows-vs-linux-containers)
 - [Windows containers images](https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/container-base-images)
 - [.NET Framework docker images](https://mcr.microsoft.com/en-us/artifact/mar/dotnet/framework/aspnet/tags)
+- [Windows in Kubernetes](https://kubernetes.io/docs/concepts/windows/)
 
 Ressources additionnelles autour des Windows Containers :
 - [LogMonitor pour le forward des logs sur stdout/err](https://github.com/microsoft/windows-container-tools/blob/main/LogMonitor/README.md)
