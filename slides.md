@@ -394,7 +394,7 @@ https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-contai
 <div class="w-100 float-left">
   <v-click>
 
-```bash{1-8|1-9|11-17|all}{at:2}
+```bash{1-9|1-9|11-17|all}{at:2}
 # Création d'un cluster AKS (Linux nodes)
 az aks create \
     --resource-group myResourceGroup \
