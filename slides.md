@@ -28,7 +28,7 @@ addons:
 </div>
 
 <div class="flex justify-center">
-  <img src="./public/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-30 mx-auto my-5" />
+  <img src="./public/resources/TechIdeas.png" class="h-30 mx-auto my-5" />
 </div>
 
 <!--
@@ -394,7 +394,7 @@ https://learn.microsoft.com/en-us/virtualization/windowscontainers/manage-contai
 <div class="w-100 float-left">
   <v-click>
 
-```bash{1-8|1-9|11-17|all}{at:2}
+```bash{1-9|1-9|11-17|all}{at:2}
 # Création d'un cluster AKS (Linux nodes)
 az aks create \
     --resource-group myResourceGroup \
@@ -402,7 +402,7 @@ az aks create \
     --node-count 1 \
     --enable-addons monitoring \
     --generate-ssh-keys \
-    --network-plugin azure
+    --network-plugin azure \
     --node-pool-name tux
 
 # Ajouter un node pool Windows
@@ -597,6 +597,13 @@ https://learn.microsoft.com/en-us/azure/aks/upgrade-windows-os
 ---
 layout: center
 class: text-center
+---
+
+<p class="text-7xl">DÉMO !</p>
+
+---
+layout: center
+class: text-center
 background: './public/resources/bdxio-kit-communication/illustrations/bridge-background-blue-large.png'
 ---
 
@@ -627,7 +634,7 @@ background: './public/resources/bdxio-kit-communication/illustrations/bridge-bac
 </div>
 
 <div class="mt-10" v-click>
-  <img src="./public/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-10 inline-block" />
+  <img src="./public/resources/TechIdeas.png" class="h-10 inline-block" />
   <p class="text-lg mt-2">Merci pour votre attention!</p>
 </div>
 

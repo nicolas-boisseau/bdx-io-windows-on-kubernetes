@@ -11,7 +11,7 @@
         <carbon-logo-github />
     </a>   
     <a href="https://bdxio.fr" target="_blank" alt="BDX.IO Website">
-        <img src="/resources/bdxio-kit-communication/logo/logo-blanc.png" class="h-8">
+        <img src="/resources/TechIdeas_black_and_white.png" class="h-8">
     </a>
      
   </div>
