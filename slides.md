@@ -45,7 +45,7 @@ layout: full
   
   <div class="text-left mt-5 mr-2">
     <h2 class="text-3xl font-bold">Nicolas Boisseau</h2>
-    <p class="text-lg">Staff Engineer @ Peaksys</p>
+    <p class="text-lg">RT @ Order to Cash</p>
     <p class="text-sm italic">#Archi #DevOps #Azure #FinOps #Kubernetes</p>
   </div>
   <img src="./public/resources/nbo_linkedin.jpg" class="h-40 rounded-full border-4 border-white/20" />
